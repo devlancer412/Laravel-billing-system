@@ -45,6 +45,12 @@
           </ul>
         </li>
         <li class="nav-item">
+          <a href="/table" class="nav-link active">
+            <i class="nav-icon fa fa-table"></i>
+            <p>Manage Tables</p>
+          </a>
+        </li>
+        <li class="nav-item">
           <a href="/profile" class="nav-link">
             <i class="nav-icon fa fa-user"></i>
             <p>Profile</p>

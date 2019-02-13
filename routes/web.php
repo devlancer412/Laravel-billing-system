@@ -15,6 +15,22 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/table', [
+	'uses'	=>	'TableController@index',
+	'as'	=>	'user.table'
+]);
+Route::post('/table', [
+	'uses'	=>	'TableController@store',
+	'as'	=>	'user.post_create_table'
+]);
+Route::post('/table/update', [
+	'uses'	=>	'TableController@update',
+	'as'	=>	'user.post_update_table'
+]);
+Route::post('/table/delete', [
+	'uses'	=>	'TableController@destroy',
+	'as'	=>	'user.delete_table'
+]);
 Route::get('/profile', [
 	'uses'	=>	'ProfileController@index',
 	'as'	=>	'user.view_profile'

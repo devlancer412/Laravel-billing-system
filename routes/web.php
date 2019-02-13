@@ -11,6 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/profile', [
+	'uses'	=>	'ProfileController@index',
+	'as'	=>	'user.view_profile'
+]);
+Route::get('/profile/edit', [
+	'uses'	=>	'ProfileController@edit',
+	'as'	=>	'user.edit_profile'
+]);
+Route::post('/profile/edit', [
+	'uses'	=>	'ProfileController@update',
+	'as'	=>	'user.post_edit_profile'
+]);

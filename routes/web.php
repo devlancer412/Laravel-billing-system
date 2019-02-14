@@ -1,35 +1,45 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+
+Route::get('/category', [
+	'uses'	=>	'CategoryController@index',
+	'as'	=>	'category'
+]);
+Route::get('/category/create', [
+	'uses'	=>	'CategoryController@create',
+	'as'	=>	'get_create_category'
+]);
+Route::post('/category/create', [
+	'uses'	=>	'CategoryController@store',
+	'as'	=>	'post_create_category'
+]);
+Route::post('/category/update', [
+	'uses'	=>	'CategoryController@update',
+	'as'	=>	'post_edit_category'
+]);
+Route::post('/category/delete', [
+	'uses'	=>	'CategoryController@destroy',
+	'as'	=>	'delete_category'
+]);
 Route::get('/table', [
 	'uses'	=>	'TableController@index',
-	'as'	=>	'user.table'
+	'as'	=>	'table'
 ]);
 Route::post('/table', [
 	'uses'	=>	'TableController@store',
-	'as'	=>	'user.post_create_table'
+	'as'	=>	'post_create_table'
 ]);
 Route::post('/table/update', [
 	'uses'	=>	'TableController@update',
-	'as'	=>	'user.post_update_table'
+	'as'	=>	'post_update_table'
 ]);
 Route::post('/table/delete', [
 	'uses'	=>	'TableController@destroy',
-	'as'	=>	'user.delete_table'
+	'as'	=>	'delete_table'
 ]);
 Route::get('/profile', [
 	'uses'	=>	'ProfileController@index',

@@ -10,7 +10,7 @@
 					<div class="card-body">
 						<div class="create-table">
 							<h2>Create New Table</h2>
-							<form action="{{route('user.post_create_table')}}" method="post">
+							<form action="{{route('post_create_table')}}" method="post">
 								@csrf
 								<div class="form-group">
 									<label for="">Table Name</label>
@@ -91,7 +91,7 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	        <form action="{{route('user.post_update_table')}}" method="post">
+	        <form action="{{route('post_update_table')}}" method="post">
 	        	@csrf
 	        	<input type="hidden" name="table_id" id="tab_id">
 	        	<div class="form-group">
@@ -128,7 +128,7 @@
 	        </button>
 	      </div>
 	      
-        <form action="{{route('user.delete_table')}}" method="post">
+        <form action="{{route('delete_table')}}" method="post">
         	@csrf
         	<div class="modal-body">
         		<p class="text-center">

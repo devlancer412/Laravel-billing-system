@@ -21,7 +21,59 @@
     <!-- Sidebar Menu -->
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <li class="nav-item has-treeview menu-open">
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link active">
+            <i class="nav-icon fa fa-dashboard"></i>
+            <p>
+              Item
+              <i class="right fa fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="#" class="nav-link active">
+                <i class="fa fa-circle-o nav-icon"></i>
+                <p>Items List</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link active">
+                <i class="fa fa-circle-o nav-icon"></i>
+                <p>Add Item</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link active">
+            <i class="nav-icon fa fa-dashboard"></i>
+            <p>
+              Category
+              <i class="right fa fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{route('category')}}" class="nav-link active">
+                <i class="fa fa-circle-o nav-icon"></i>
+                <p>View Category</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{route('get_create_category')}}" class="nav-link active">
+                <i class="fa fa-circle-o nav-icon"></i>
+                <p>Add New Category</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="/table" class="nav-link active">
+            <i class="nav-icon fa fa-table"></i>
+            <p>Manage Tables</p>
+          </a>
+        </li>
+        <li class="nav-item has-treeview">
           <a href="#" class="nav-link active">
             <i class="nav-icon fa fa-dashboard"></i>
             <p>
@@ -37,18 +89,12 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="#" class="nav-link active">
                 <i class="fa fa-circle-o nav-icon"></i>
                 <p>Monthly</p>
               </a>
             </li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a href="/table" class="nav-link active">
-            <i class="nav-icon fa fa-table"></i>
-            <p>Manage Tables</p>
-          </a>
         </li>
         <li class="nav-item">
           <a href="/profile" class="nav-link">

@@ -4,7 +4,26 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-
+Route::get('/item', [
+	'uses'	=>	'ItemController@index',
+	'as'	=>	'item'
+]);
+Route::get('item/create', [
+	'uses'	=>	'ItemController@create',
+	'as'	=>	'get_create_item'
+]);
+Route::post('item/create', [
+	'uses'	=>	'ItemController@store',
+	'as'	=>	'post_create_item'
+]);
+Route::get('item/edit/{item}', [
+	'uses'	=>	'ItemController@edit',
+	'as'	=>	'get_update_item'
+]);
+Route::post('item/edit/{item}', [
+	'uses'	=>	'ItemController@update',
+	'as'	=>	'post_update_item'
+]);
 Route::get('/category', [
 	'uses'	=>	'CategoryController@index',
 	'as'	=>	'category'
@@ -52,4 +71,12 @@ Route::get('/profile/edit', [
 Route::post('/profile/edit', [
 	'uses'	=>	'ProfileController@update',
 	'as'	=>	'user.post_edit_profile'
+]);
+Route::get('/setting', [
+	'uses'	=>	'ProfileController@setting_index',
+	'as'	=>	'setting'
+]);
+Route::post('/setting', [
+	'uses'	=>	'ProfileController@setting_update',
+	'as'	=>	'post_update_setting'
 ]);

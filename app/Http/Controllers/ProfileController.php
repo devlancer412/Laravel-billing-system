@@ -6,6 +6,7 @@ use Auth;
 use Carbon\Carbon;
 use Session;
 use App\User;
+use App\Setting;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -19,18 +20,6 @@ class ProfileController extends Controller
     {
         $user = User::where('id', Auth::id())->firstOrFail();
         return view('profile.index', compact('user'));
-    }
-
-  
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -88,6 +77,22 @@ class ProfileController extends Controller
         $user->save();
         Session::flash('msg', 'Profile successfully updated');
         return redirect()->route('home');
+    }
+
+    public function setting_index() {
+        $setting = Setting::all();
+        return view('profile.setting', compact('setting'));
+    }
+
+    public function setting_update(Request $request) {
+        $setting = new Setting;
+        $setting->service_charge = $request->service_charge;
+        $setting->vat_no = $request->vat_no;
+        $setting->vat_charge = $request->vat_charge;
+        $setting->save();
+        
+        Session::flash('msg', 'Settings updated successfully');
+        return back();
     }
 
 }

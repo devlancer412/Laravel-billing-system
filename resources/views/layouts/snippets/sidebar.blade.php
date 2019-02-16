@@ -31,13 +31,13 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="#" class="nav-link active">
+              <a href="{{route('item')}}" class="nav-link active">
                 <i class="fa fa-circle-o nav-icon"></i>
                 <p>Items List</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link active">
+              <a href="/item/create" class="nav-link active">
                 <i class="fa fa-circle-o nav-icon"></i>
                 <p>Add Item</p>
               </a>
